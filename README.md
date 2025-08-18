@@ -52,7 +52,7 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 - `steamdb.info/app/*` - Individual game pages
 - `steamdb.info/charts/` - Game rankings and charts
 
-## License
+## ©️ License
 
 MIT License - see [LICENSE](./LICENSE) file for details
 
