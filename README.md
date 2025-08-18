@@ -40,7 +40,7 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 4. Click "Load Temporary Add-on"
 5. Select the `manifest.json` file from the downloaded folder
 
-## Usage
+## ⚙️ Usage
 
 1. Navigate to any SteamDB game page or charts page
 2. Look for the purple "Copy" buttons next to App IDs
