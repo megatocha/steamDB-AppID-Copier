@@ -9,8 +9,8 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 ![Release Download](https://img.shields.io/github/downloads/megatocha/steamDB-AppID-Copier/total?style=flat-square)
 [![Release Version](https://img.shields.io/github/v/release/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/megatocha/steamDB-AppID-Copier/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/megatocha/steamDB-AppID-Copier?style=flat-square)](LICENSE)
-[![GitHub Star](https://img.shields.io/github/stars/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/stargazers)
-[![GitHub Fork](https://img.shields.io/github/forks/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/network/members)
+[![GitHub Star](https://img.shields.io/github/stars/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/megatocha/steamDB-AppID-Copier/stargazers)
+[![GitHub Fork](https://img.shields.io/github/forks/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/megatocha/steamDB-AppID-Copier/network/members)
 ![GitHub Repo size](https://img.shields.io/github/repo-size/megatocha/steamDB-AppID-Copier?style=flat-square&color=3cb371)
 
 </div>
