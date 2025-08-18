@@ -1,4 +1,12 @@
-# SteamDB App ID Copier
+<h1 align="center">SteamDB AppID Copier</h1>
+<div align="center">
+
+English | [Русский](./README.ru.md)
+
+A Firefox extension that adds convenient copy buttons for Steam App IDs on SteamDB pages.
+>
+
+
 ![Release Download](https://img.shields.io/github/downloads/megatocha/steamDB-AppID-Copier/total?style=flat-square)
 [![Release Version](https://img.shields.io/github/v/release/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/releases/latest)
 [![GitHub license](https://img.shields.io/github/license/megatocha/steamDB-AppID-Copier?style=flat-square)](LICENSE)
@@ -7,16 +15,16 @@
 ![GitHub Repo size](https://img.shields.io/github/repo-size/megatocha/steamDB-AppID-Copier?style=flat-square&color=3cb371)
 [![GitHub Repo Languages](https://img.shields.io/github/languages/top/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/search?l=c%23)
 
-A Firefox extension that adds convenient copy buttons for Steam App IDs on SteamDB pages.
+</div>
 
-## Features
+## ✨ Features
 
 - 🎮 **Individual Game Pages**: Copy button next to the App ID field
 - 📊 **Charts Page**: Copy buttons for each game in the rankings
 - 🎨 **Modern Design**: Beautiful gradient buttons with smooth animations
 - ⚡ **Fast**: Lightweight and efficient
 
-## Screenshots
+## 🧩 Screenshots
 
 ### Game Page
 <img width="1920" height="947" alt="firefox_IBKiTzyStS" src="https://github.com/user-attachments/assets/2efcc8ea-2cdc-4a52-8fa3-8bffc90626a3" />
@@ -24,12 +32,10 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 ### Charts Page
 <img width="1920" height="952" alt="firefox_y4BGTaRmQL" src="https://github.com/user-attachments/assets/77c5cfa7-6985-4d1f-acfb-ed5061b895b0" />
 
-## Installation
-
-### From Firefox Add-ons Store
+### 🚀 Fast Installation
 *Coming soon - under review*
 
-### Manual Installation (Development)
+### ⬇️ Manual Installation (Development)
 1. Download or clone this repository
 2. Open Firefox and navigate to `about:debugging`
 3. Click "This Firefox" in the sidebar
@@ -50,7 +56,7 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details
+MIT License - see [LICENSE](./LICENSE) file for details
 
 ## Author
 
