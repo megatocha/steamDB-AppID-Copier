@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "SteamDB App ID Copier",
+  "version": "1.0",
+  "description": "Easily copy Steam App IDs from SteamDB pages",
+  
+  "permissions": [
+    "*://steamdb.info/*"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "*://steamdb.info/app/*",
+        "*://steamdb.info/charts/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "icons": {
+    "16": "./icons/icon16.png",
+    "48": "./icons/icon48.png",
+    "128": "./icons/icon128.png"
+  }
+}

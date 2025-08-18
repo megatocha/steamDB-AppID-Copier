@@ -1,0 +1,246 @@
+/* SteamDB App ID Copier Styles - Modern Design */
+
+.steamdb-copy-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    padding: 8px 12px;
+    margin-left: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: fit-content;
+    height: 32px;
+    vertical-align: middle;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.steamdb-copy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.steamdb-copy-btn:hover::before {
+    left: 100%;
+}
+
+.steamdb-copy-btn:hover {
+    background: linear-gradient(135deg, #7c8ef2 0%, #8b5db8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.steamdb-copy-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.steamdb-copy-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2.5;
+    transition: transform 0.2s ease;
+}
+
+.steamdb-copy-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.steamdb-copy-btn .copy-text {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Specific styling for app page buttons */
+.steamdb-copy-btn.app-page-btn {
+    margin-left: 12px;
+    padding: 10px 16px;
+    height: 36px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
+}
+
+.steamdb-copy-btn.app-page-btn .copy-text {
+    font-size: 14px;
+}
+
+/* Container for charts page buttons */
+.copy-btn-container {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+/* Specific styling for charts page buttons */
+.steamdb-copy-btn.charts-page-btn {
+    margin: 0;
+    padding: 6px 10px;
+    height: 28px;
+    min-width: fit-content;
+    font-size: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.25);
+}
+
+.steamdb-copy-btn.charts-page-btn svg {
+    width: 14px;
+    height: 14px;
+}
+
+.steamdb-copy-btn.charts-page-btn .copy-text {
+    font-size: 12px;
+}
+
+/* Notification styles - Modern glassmorphism design */
+.steamdb-copy-notification {
+    position: fixed;
+    top: 80px; /* Moved below the top bar */
+    right: 24px;
+    background: rgba(102, 126, 234, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    z-index: 100000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(100px) scale(0.8);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    min-width: 200px;
+    text-align: center;
+}
+
+.steamdb-copy-notification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+    z-index: -1;
+}
+
+.steamdb-copy-notification.show {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Success animation */
+@keyframes successPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.steamdb-copy-notification.show {
+    animation: successPulse 0.3s ease-out 0.1s;
+}
+
+/* Dark theme compatibility with modern touches */
+@media (prefers-color-scheme: dark) {
+    .steamdb-copy-btn {
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+    
+    .steamdb-copy-btn:hover {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    }
+    
+    .steamdb-copy-notification {
+        background: rgba(30, 30, 30, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #f8fafc;
+    }
+    
+    .steamdb-copy-notification::before {
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.3) 0%, rgba(124, 58, 237, 0.3) 100%);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .steamdb-copy-btn.app-page-btn {
+        margin-left: 8px;
+        padding: 8px 12px;
+        height: 32px;
+        font-size: 12px;
+    }
+    
+    .steamdb-copy-btn.charts-page-btn {
+        padding: 4px 8px;
+        height: 24px;
+        font-size: 11px;
+    }
+    
+    .steamdb-copy-btn .copy-text {
+        display: none; /* Hide text on mobile, show only icon */
+    }
+    
+    .copy-btn-container {
+        right: 4px;
+    }
+    
+    .steamdb-copy-notification {
+        top: 70px;
+        right: 16px;
+        left: 16px;
+        width: auto;
+        font-size: 13px;
+        padding: 14px 18px;
+        text-align: center;
+    }
+}
+
+/* Animation for button appearance */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.steamdb-copy-btn {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Hover effect for table rows on charts page */
+tr:hover .copy-btn-container {
+    opacity: 1;
+}
+
+.copy-btn-container {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
