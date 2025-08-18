@@ -12,7 +12,6 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 [![GitHub Star](https://img.shields.io/github/stars/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/stargazers)
 [![GitHub Fork](https://img.shields.io/github/forks/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/network/members)
 ![GitHub Repo size](https://img.shields.io/github/repo-size/megatocha/steamDB-AppID-Copier?style=flat-square&color=3cb371)
-[![GitHub Repo Languages](https://img.shields.io/github/languages/top/megatocha/steamDB-AppID-Copier?style=flat-square)](https://github.com/BeyondDimension/SteamTools/search?l=c%23)
 
 </div>
 
