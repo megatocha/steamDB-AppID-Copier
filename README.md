@@ -4,7 +4,6 @@
 English | [Русский](./README.ru.md)
 
 A Firefox extension that adds convenient copy buttons for Steam App IDs on SteamDB pages.
->
 
 
 ![Release Download](https://img.shields.io/github/downloads/megatocha/steamDB-AppID-Copier/total?style=flat-square)
