@@ -21,7 +21,7 @@
 - ⚡ **Быстрота**: Легкое и эффективное расширение
 
 ### 🚀 Быстрая установка
-[![Firefox Download](https://img.shields.io/badge/Firefox-Скачать-%23FF7139?logo=firefoxbrowser&labelColor=%23222222&color=%234caf50&style=for-the-badge)](https://addons.mozilla.org/firefox/downloads/file/4559123/steamdb_app_id_copier-1.0.xpi)
+[![Firefox Download](https://img.shields.io/badge/Firefox-Скачать-%23FF7139?logo=firefoxbrowser&labelColor=%23222222&color=%234caf50&style=for-the-badge)](https://addons.mozilla.org/ru/firefox/addon/steamdb-app-id-copier/)
 
 ### ⬇️ Ручная установка (для разработчиков)
 1. Скачайте или клонируйте этот репозиторий
