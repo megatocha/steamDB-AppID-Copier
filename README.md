@@ -22,8 +22,8 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 - ⚡ **Fast**: Lightweight and efficient
 
 ### 🚀 Fast Installation
-[![Firefox Download](https://img.shields.io/badge/Firefox-Download-%23FF7139?logo=firefoxbrowser&labelColor=%23222222&color=%234caf50&style=for-the-badge)](firefox)
-[![Firefox Users](https://img.shields.io/amo/dw/steamdb-app-id-copier?labelColor=23222222&label=&style=for-the-badge)](firefox)
+[![Firefox Download](https://img.shields.io/badge/Firefox-Download-%23FF7139?logo=firefoxbrowser&labelColor=%23222222&color=%234caf50&style=for-the-badge)][firefox]
+[![Firefox Users](https://img.shields.io/amo/dw/steamdb-app-id-copier?labelColor=23222222&label=&style=for-the-badge)][firefox]
 
 ### ⬇️ Manual Installation (Development)
 1. Download or clone this repository
