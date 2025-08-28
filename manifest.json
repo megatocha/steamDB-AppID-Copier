@@ -12,7 +12,8 @@
     {
       "matches": [
         "*://steamdb.info/app/*",
-        "*://steamdb.info/charts/*"
+        "*://steamdb.info/charts/*",
+        "*://steamdb.info/sales/*"
       ],
       "js": ["content.js"],
       "css": ["styles.css"],
