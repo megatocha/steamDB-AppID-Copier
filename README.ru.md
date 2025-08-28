@@ -41,7 +41,8 @@
 - `steamdb.info/charts/` - Рейтинги и чарты игр
 
 ## 🧩 Скриншоты
-
+<details>
+<summary><strong>📷 Нажмите чтобы открыть (3)</strong></summary>
 <div align="center">
 
 ### Страница игры
@@ -57,8 +58,10 @@
 ### Страница распродаж
 <img width="1920" height="952" alt="firefox_kX3T0ADvwT" src="https://github.com/user-attachments/assets/cda26f88-2e47-4d0e-8255-5a661b990b7c" />
 
+---
 
 </div>
+</details>
 
 ## ©️ Лицензия
 MIT License - смотрите файл [LICENSE](./LICENSE) для подробностей<br>
