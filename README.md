@@ -60,7 +60,7 @@ MIT License - see [LICENSE](./LICENSE) file for details
 Created with ❤️ for the Steam gaming community
 
 ⭐ Add a star to my directory! <br>
-![star](https://github.com/user-attachments/assets/bfd45d2b-f5a3-40bf-9e9f-0e656be0b7c8) <br>
+![star](https://github.com/user-attachments/assets/cc66e612-3b0f-4232-9467-e246d2d30f90)<br>
 
 ## 📝 Changelog
 ### v1.0.0
