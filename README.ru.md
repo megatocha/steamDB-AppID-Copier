@@ -41,21 +41,34 @@
 - `steamdb.info/charts/` - Рейтинги и чарты игр
 
 ## 🧩 Скриншоты
+
+<div align="center">
+
 ### Страница игры
 <img width="1920" height="947" alt="firefox_IBKiTzyStS" src="https://github.com/user-attachments/assets/2efcc8ea-2cdc-4a52-8fa3-8bffc90626a3" />
+
+---
 
 ### Страница рейтингов
 <img width="1920" height="952" alt="firefox_y4BGTaRmQL" src="https://github.com/user-attachments/assets/77c5cfa7-6985-4d1f-acfb-ed5061b895b0" />
 
-## ©️ Лицензия
-MIT License - смотрите файл [LICENSE](./LICENSE) для подробностей
+---
 
+### Sales Page
+<img width="1920" height="952" alt="firefox_kX3T0ADvwT" src="https://github.com/user-attachments/assets/cda26f88-2e47-4d0e-8255-5a661b990b7c" />
+
+---
+
+</div>
+
+## ©️ Лицензия
+MIT License - смотрите файл [LICENSE](./LICENSE) для подробностей<br>
 <div align="center">
 
 ## 👤 Автор
 Создано с ❤️ для игрового сообщества Steam
 
-<b>⭐ Поставь звезду моему проекту!</b><br>
+<b>⭐ Поставь звезду моему проекту!</b> <br>
 ![star](https://github.com/user-attachments/assets/cc66e612-3b0f-4232-9467-e246d2d30f90)<br>
 
 </div>
