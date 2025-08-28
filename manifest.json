@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SteamDB App ID Copier",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Easily copy Steam App IDs from SteamDB pages",
   
   "permissions": [
