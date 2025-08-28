@@ -21,7 +21,8 @@
 - ⚡ **Скорость**: Легкое и эффективное расширение
 
 ### 🚀 Быстрая установка
-[![Firefox Download](https://img.shields.io/badge/Firefox-Скачать-%23FF7139?logo=firefoxbrowser&labelColor=%23222222&color=%234caf50&style=for-the-badge)](https://addons.mozilla.org/ru/firefox/addon/steamdb-app-id-copier/)
+[![Firefox Download](https://img.shields.io/badge/Firefox-Download-%23FF7139?logo=firefoxbrowser&labelColor=%23222222&color=%234caf50&style=for-the-badge)][firefox]
+[![Firefox Users](https://img.shields.io/amo/dw/steamdb-app-id-copier?labelColor=23222222&label=&style=for-the-badge)][firefox]
 
 ### ⬇️ Ручная установка (для разработчиков)
 1. Скачайте или клонируйте этот репозиторий
@@ -75,3 +76,5 @@ MIT License - смотрите файл [LICENSE](./LICENSE) для подроб
 ![star](https://github.com/user-attachments/assets/cc66e612-3b0f-4232-9467-e246d2d30f90)<br>
 
 </div>
+
+[firefox]: https://addons.mozilla.org/ru/firefox/addon/steamdb-app-id-copier/
