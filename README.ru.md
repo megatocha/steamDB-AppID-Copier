@@ -45,7 +45,7 @@
 <div align="center">
 
 ### Страница игры
-<img width="1920" height="947" alt="firefox_IBKiTzyStS" src="https://github.com/user-attachments/assets/2efcc8ea-2cdc-4a52-8fa3-8bffc90626a3" />
+<img width="1920" height="952" alt="firefox_dAH89EzWmO" src="https://github.com/user-attachments/assets/19c1d998-4544-49eb-8167-425c0d47d7ad" />
 
 ---
 
@@ -54,10 +54,9 @@
 
 ---
 
-### Sales Page
+### Страница распродаж
 <img width="1920" height="952" alt="firefox_kX3T0ADvwT" src="https://github.com/user-attachments/assets/cda26f88-2e47-4d0e-8255-5a661b990b7c" />
 
----
 
 </div>
 
