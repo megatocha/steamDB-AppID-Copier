@@ -17,7 +17,7 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 
 ## ✨ Features
 - 🎮 **Individual Game Pages**: Copy button next to the App ID field
-- 📊 **Charts Page**: Copy buttons for each game in the rankings
+- 📊 **Charts and Sales Pages**: Copy buttons for each game in the rankings
 - 🎨 **Modern Design**: Beautiful gradient buttons with smooth animations
 - ⚡ **Fast**: Lightweight and efficient
 
@@ -53,7 +53,7 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 ---
 
 ### Charts Page
-<img width="1920" height="952" alt="firefox_y4BGTaRmQL" src="https://github.com/user-attachments/assets/77c5cfa7-6985-4d1f-acfb-ed5061b895b0" />
+<img width="1920" height="952" alt="firefox_cjVjGnyU62" src="https://github.com/user-attachments/assets/ff73c4ee-67fd-4a96-9067-89f743da6ed1" />
 
 ---
 
