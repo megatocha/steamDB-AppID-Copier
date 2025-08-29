@@ -16,6 +16,7 @@
 ## ✨ Возможности
 - 🎮 **Страницы отдельных игр**: Кнопка копирования рядом с полем App ID
 - 📊 **Страницы рейтингов и распродаж**: Кнопки копирования для каждой игры в рейтингах
+- 📜 **Всплывающее окно и история**: Легкое перекопирование
 - 🎨 **Современный дизайн**: Красивые градиентные кнопки с плавными анимациями
 - ⚡ **Скорость**: Легкое и эффективное расширение
 
@@ -43,21 +44,26 @@
 
 ## 🧩 Скриншоты
 <details>
-<summary><strong>📷 Нажмите чтобы открыть (3)</strong></summary>
+<summary><strong>📷 Нажмите чтобы открыть (4)</strong></summary>
 <div align="center">
 
 ### Страница игры
-<img width="1920" height="952" alt="firefox_dAH89EzWmO" src="https://github.com/user-attachments/assets/19c1d998-4544-49eb-8167-425c0d47d7ad" />
+<img width="1920" height="947" alt="firefox_u2z32Syj06" src="https://github.com/user-attachments/assets/f2529532-2e7e-4259-b3cc-6104f3f4a93d" />
 
 ---
 
 ### Страница рейтингов
-<img width="1920" height="952" alt="firefox_cjVjGnyU62" src="https://github.com/user-attachments/assets/6d8160b7-6c84-49fc-b35a-91bab164d802" />
+<img width="1920" height="947" alt="firefox_bF9dwGFkqR" src="https://github.com/user-attachments/assets/50b0c04a-21a7-4432-a398-dd134f40e5b2" />
 
 ---
 
 ### Страница скидок
-<img width="1920" height="952" alt="firefox_kX3T0ADvwT" src="https://github.com/user-attachments/assets/cda26f88-2e47-4d0e-8255-5a661b990b7c" />
+<img width="1920" height="947" alt="firefox_AOP8GUVf50" src="https://github.com/user-attachments/assets/5a456a7d-9100-4297-98c3-e2aae7e252ca" />
+
+---
+
+### Всплывающее окно
+<img width="370" height="566" alt="QKdrrXvOFx" src="https://github.com/user-attachments/assets/63aa80dd-0f16-405b-b365-5182d97cde1e" />
 
 ---
 
