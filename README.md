@@ -14,8 +14,9 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 </div>
 
 ## ✨ Features
-- 🎮 **Individual Game Pages**: Copy button next to the App ID field
-- 📊 **Charts and Sales Pages**: Copy buttons for each game in the rankings
+- 🎮 **Individual Game Pages**: Copy button next to the information fields
+- 📊 **Charts and Sales Pages**: Copy buttons for each game in the table
+- 📜 **Popup and History**: Easy to re-copy
 - 🎨 **Modern Design**: Beautiful gradient buttons with smooth animations
 - ⚡ **Fast**: Lightweight and efficient
 
@@ -43,24 +44,30 @@ A Firefox extension that adds convenient copy buttons for Steam App IDs on Steam
 
 ## 🧩 Screenshots
 <details>
-<summary><strong>📷 Click to open (3)</strong></summary>
+<summary><strong>📷 Click to open (4)</strong></summary>
 
 <div align="center">
 
 ### Game Page
-<img width="1920" height="952" alt="firefox_dAH89EzWmO" src="https://github.com/user-attachments/assets/19c1d998-4544-49eb-8167-425c0d47d7ad" />
+<img width="1920" height="947" alt="firefox_u2z32Syj06" src="https://github.com/user-attachments/assets/f2529532-2e7e-4259-b3cc-6104f3f4a93d" />
 
 ---
 
 ### Charts Page
-<img width="1920" height="952" alt="firefox_cjVjGnyU62" src="https://github.com/user-attachments/assets/ff73c4ee-67fd-4a96-9067-89f743da6ed1" />
+<img width="1920" height="947" alt="firefox_bF9dwGFkqR" src="https://github.com/user-attachments/assets/50b0c04a-21a7-4432-a398-dd134f40e5b2" />
 
 ---
 
 ### Sales Page
-<img width="1920" height="952" alt="firefox_kX3T0ADvwT" src="https://github.com/user-attachments/assets/cda26f88-2e47-4d0e-8255-5a661b990b7c" />
+<img width="1920" height="947" alt="firefox_AOP8GUVf50" src="https://github.com/user-attachments/assets/5a456a7d-9100-4297-98c3-e2aae7e252ca" />
 
 ---
+
+### Popup
+<img width="370" height="566" alt="QKdrrXvOFx" src="https://github.com/user-attachments/assets/63aa80dd-0f16-405b-b365-5182d97cde1e" />
+
+---
+
 </details>
 </div>
 
