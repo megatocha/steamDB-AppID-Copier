@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SteamDB Copy Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="popup-container">
+        <div class="header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+                    <rect x="4" y="4" width="11" height="11" rx="2" ry="2" style="opacity:0.5"></rect>
+                </svg>
+                <span>SteamDB Copier</span>
+            </div>
+            <div class="version" id="version-display">v1.3</div>
+        </div>
+
+        <div id="notification-container" class="steamdb-copy-notification-container"></div>
+
+        <div class="info-section">
+            <div class="info-item">
+                <span class="info-label">Status</span>
+                <span class="info-value status-active">Active</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Total Copied</span>
+                <span class="info-value" id="total-copied">0</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Unique Items</span>
+                <span class="info-value" id="unique-copied">0</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="history-section">
+            <div class="history-header">
+                <h3>Copy History</h3>
+                <button class="clear-btn" id="clear-history" disabled>Clear</button>
+            </div>
+            
+            <div class="history-list" id="history-list">
+                <div class="history-empty">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="11" height="11" rx="2" ry="2"></rect>
+                        <rect x="4" y="4" width="11" height="11" rx="2" ry="2" style="opacity:0.5"></rect>
+                    </svg>
+                    <p>No items copied yet</p>
+                    <small>Start copying App IDs and values from SteamDB pages</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="https://github.com/megatocha/steamDB-AppID-Copier/blob/main/README.md" class="footer-link">About</a>
+                <a href="https://github.com/megatocha/steamDB-AppID-Copier/issues" class="footer-link">Help</a>
+                <a href="https://github.com/megatocha/steamDB-AppID-Copier" class="footer-link">Github</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

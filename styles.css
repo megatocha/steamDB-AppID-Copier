@@ -1,27 +1,27 @@
-/* SteamDB App ID Copier Styles - Modern Design */
+/* SteamDB App ID Copier Styles - Unified Design */
 
 .steamdb-copy-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 100%;
+    height: 100%;
+    min-width: unset;
+    margin: 0;
+    padding: 0;
     border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    padding: 8px 12px;
-    margin-left: 12px;
-    font-size: 13px;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-flex;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 15px;
+    background: transparent;
+    display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     gap: 6px;
-    min-width: fit-content;
-    height: 32px;
-    vertical-align: middle;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
     position: relative;
     overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .steamdb-copy-btn::before {
@@ -39,21 +39,17 @@
     left: 100%;
 }
 
-.steamdb-copy-btn:hover {
-    background: linear-gradient(135deg, #7c8ef2 0%, #8b5db8 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-.steamdb-copy-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+.copy-cell:hover .steamdb-copy-btn {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.1) 100%);
+    transform: scale(1.02);
 }
 
 .steamdb-copy-btn svg {
-    width: 16px;
-    height: 16px;
-    stroke-width: 2.5;
+    margin-right: 0;
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.2;
+    stroke: currentColor;
     transition: transform 0.2s ease;
 }
 
@@ -62,68 +58,6 @@
 }
 
 .steamdb-copy-btn .copy-text {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
-
-.steamdb-copy-btn.app-page-btn {
-    margin-left: 12px;
-    padding: 10px 16px;
-    height: 36px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(102, 126, 234, 0.3);
-}
-
-.steamdb-copy-btn.app-page-btn .copy-text {
-    font-size: 14px;
-}
-
-.copy-btn-container {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.steamdb-copy-btn.charts-page-btn {
-    margin: 0;
-    padding: 6px 10px;
-    height: 28px;
-    min-width: fit-content;
-    font-size: 12px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.25);
-}
-
-.steamdb-copy-btn.sales-page-btn {
-    width: 100%;
-    height: 100%;
-    min-width: unset;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    font-size: 15px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
-
-.copy-cell:hover .steamdb-copy-btn.sales-page-btn {
-    background: rgba(102, 126, 234, 0.15);
-}
-
-.steamdb-copy-btn.sales-page-btn svg {
-    margin-right: 0;
-    width: 22px;
-    height: 22px;
-}
-
-.steamdb-copy-btn.sales-page-btn .copy-text {
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -136,6 +70,32 @@
     height: 40px;
     background: transparent !important;
     border-right: 0 !important;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.copy-cell[rowspan] {
+    height: auto;
+}
+
+.copy-cell[rowspan="2"] .steamdb-copy-btn {
+    min-height: 80px;
+}
+
+.copy-cell[rowspan="3"] .steamdb-copy-btn {
+    min-height: 120px;
+}
+
+.copy-cell[rowspan="4"] .steamdb-copy-btn {
+    min-height: 160px;
+}
+
+.copy-cell[rowspan="5"] .steamdb-copy-btn {
+    min-height: 200px;
+}
+
+.steamdb-copy-btn.date-row-btn {
+    min-height: 56px !important;
 }
 
 .copy-header-cell {
@@ -145,24 +105,6 @@
     border-right: 0 !important;
     background: #242634;
     position: relative;
-}
-
-.copy-cell {
-    width: 78px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 0 !important;
-    background: transparent !important;
-    border-right: 0 !important;
-}
-
-.steamdb-copy-btn.charts-page-btn svg {
-    width: 14px;
-    height: 14px;
-}
-
-.steamdb-copy-btn.charts-page-btn .copy-text {
-    font-size: 12px;
 }
 
 /* Notifications container */
@@ -241,14 +183,6 @@
     word-break: break-word;
 }
 
-.steamdb-copy-btn svg {
-    width: 22px;
-    height: 22px;
-    stroke-width: 2.2;
-    margin-right: 2px;
-    vertical-align: middle;
-}
-
 .steamdb-copy-notification::before {
     content: '';
     position: absolute;
@@ -283,14 +217,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .steamdb-copy-btn {
-        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-        box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
-    }
-    .steamdb-copy-btn:hover {
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
-    }
     .steamdb-copy-notification {
         background: rgba(30, 30, 30, 0.57);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -302,22 +228,8 @@
 }
 
 @media (max-width: 768px) {
-    .steamdb-copy-btn.app-page-btn {
-        margin-left: 8px;
-        padding: 8px 12px;
-        height: 32px;
-        font-size: 12px;
-    }
-    .steamdb-copy-btn.charts-page-btn {
-        padding: 4px 8px;
-        height: 24px;
-        font-size: 11px;
-    }
     .steamdb-copy-btn .copy-text {
         display: none;
-    }
-    .copy-btn-container {
-        right: 4px;
     }
     .steamdb-copy-notification,
     .steamdb-copy-notification-container {
@@ -344,13 +256,4 @@
 
 .steamdb-copy-btn {
     animation: fadeInUp 0.3s ease-out;
-}
-
-tr:hover .copy-btn-container {
-    opacity: 1;
-}
-
-.copy-btn-container {
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
 }

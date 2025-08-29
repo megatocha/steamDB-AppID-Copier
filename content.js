@@ -2,8 +2,7 @@
 (function() {
     'use strict';
 
-    // Notification bubble queue
-    const NOTIFICATION_DURATION = 800; // ms
+    const NOTIFICATION_DURATION = 900; // ms
     const ANIMATION_OUT = 130; // ms
 
     function getNotificationContainer() {
@@ -44,24 +43,71 @@
             }, ANIMATION_OUT);
         }, NOTIFICATION_DURATION);
 
-        // Stack notifications below previous (no overlap)
         const notifications = container.querySelectorAll('.steamdb-copy-notification');
         notifications.forEach((n, i) => {
             n.style.marginTop = (i === 0) ? '0px' : '10px';
         });
     }
 
+    async function getHistory() {
+        try {
+            const result = await browser.storage.local.get('steamdb_copy_history');
+            return result.steamdb_copy_history || [];
+        } catch {
+            return [];
+        }
+    }
+
+    async function getTotalCopied() {
+        try {
+            const result = await browser.storage.local.get('steamdb_total_copied');
+            return result.steamdb_total_copied || 0;
+        } catch {
+            return 0;
+        }
+    }
+
+    async function addToHistory(value) {
+        const history = await getHistory();
+        const now = new Date();
+        const existingIndex = history.findIndex(item => item.value === value);
+        
+        if (existingIndex !== -1) {
+            history[existingIndex].count++;
+            history[existingIndex].lastCopied = now.toISOString();
+            const item = history.splice(existingIndex, 1)[0];
+            history.unshift(item);
+        } else {
+            history.unshift({
+                value: value,
+                count: 1,
+                firstCopied: now.toISOString(),
+                lastCopied: now.toISOString()
+            });
+        }
+        
+        const limitedHistory = history.slice(0, 50);
+        const totalCopied = await getTotalCopied() + 1;
+        
+        await browser.storage.local.set({
+            'steamdb_copy_history': limitedHistory,
+            'steamdb_total_copied': totalCopied
+        });
+        
+        // Send message to popup to update UI
+        browser.runtime.sendMessage({
+            type: 'STEAMDB_COPY',
+            value: value
+        }).catch(() => {});
+    }
+
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => {
             createNotification(`Copied: ${text}`);
-        }).catch(() => {
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-            createNotification(`Copied: ${text}`);
+            addToHistory(text);
+        }).catch(err => {
+            console.error('Failed to copy to clipboard:', err);
+            createNotification('Failed to copy!');
         });
     }
 
@@ -75,7 +121,7 @@
             </svg>
             <span class="copy-text">Copy</span>
         `;
-        button.title = `Copy App ID: ${appId}`;
+        button.title = `Copy: ${appId}`;
         button.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -85,62 +131,120 @@
     }
 
     function handleAppPage() {
-        if (document.querySelector('.steamdb-copy-btn.app-page-btn')) return;
+        const table = document.querySelector('table');
+        if (!table) return;
 
-        const tables = document.querySelectorAll('table');
-        for (const table of tables) {
-            const rows = table.querySelectorAll('tr');
-            for (const row of rows) {
-                const firstCell = row.querySelector('td:first-child');
-                if (firstCell && firstCell.textContent.trim() === 'App ID') {
-                    const appIdCell = row.querySelector('td:last-child');
-                    if (appIdCell && !appIdCell.querySelector('.steamdb-copy-btn')) {
-                        const appId = appIdCell.textContent.trim();
-                        const copyBtn = createCopyButton(appId);
-                        copyBtn.classList.add('app-page-btn');
+        const theadRow = table.querySelector('thead tr');
+        if (theadRow && !theadRow.querySelector('.copy-header-cell')) {
+            const th = document.createElement('th');
+            th.className = 'copy-header-cell';
+            th.setAttribute('aria-hidden', 'true');
+            th.setAttribute('tabindex', '-1');
+            th.style.width = '78px';
+            th.style.textAlign = 'center';
+            th.textContent = '';
+            theadRow.appendChild(th);
+        }
 
-                        const wrapper = document.createElement('span');
-                        wrapper.style.display = 'inline-flex';
-                        wrapper.style.alignItems = 'center';
-                        wrapper.style.gap = '8px';
+        const rows = table.querySelectorAll('tbody tr, tr');
+        const processedRows = new Set();
+        
+        for (let i = 0; i < rows.length; i++) {
+            const row = rows[i];
+            if (row.querySelector('.copy-cell') || processedRows.has(row)) continue;
 
-                        wrapper.innerHTML = appId;
-                        appIdCell.innerHTML = '';
-                        appIdCell.appendChild(wrapper);
-                        wrapper.appendChild(copyBtn);
+            const firstCell = row.querySelector('td:first-child');
+            const lastCell = row.querySelector('td:last-child');
+            
+            if (firstCell && lastCell && firstCell !== lastCell) {
+                const value = lastCell.textContent.trim();
+                if (!value) continue;
+                
+                let mergedRows = [row];
+                let nextRowIndex = i + 1;
+                
+                while (nextRowIndex < rows.length) {
+                    const nextRow = rows[nextRowIndex];
+                    const nextLastCell = nextRow.querySelector('td:last-child');
+                    
+                    if (nextLastCell && nextLastCell.textContent.trim() === value) {
+                        mergedRows.push(nextRow);
+                        processedRows.add(nextRow);
+                        nextRowIndex++;
+                    } else {
+                        break;
                     }
-                    return;
                 }
+                
+                const td = document.createElement('td');
+                td.className = 'copy-cell';
+                td.setAttribute('aria-hidden', 'true');
+                td.setAttribute('tabindex', '-1');
+                td.style.textAlign = 'center';
+                td.style.verticalAlign = 'middle';
+                td.style.width = '78px';
+                
+                if (mergedRows.length > 1) {
+                    td.rowSpan = mergedRows.length;
+                }
+                
+                const isDateRow = value.includes('UTC') || value.includes('ago') || /\d{2}:\d{2}:\d{2}/.test(value);
+                
+                const copyBtn = createCopyButton(value);
+                copyBtn.classList.add('app-page-btn');
+                if (isDateRow) {
+                    copyBtn.classList.add('date-row-btn');
+                }
+                td.appendChild(copyBtn);
+                row.appendChild(td);
+                
+                mergedRows.forEach(r => processedRows.add(r));
             }
         }
     }
 
     function handleChartsPage() {
-        const gameRows = document.querySelectorAll('tr[data-appid], tr:has(a[href*="/app/"])');
-        gameRows.forEach(row => {
-            if (row.querySelector('.steamdb-copy-btn')) return;
+        const table = document.querySelector('table');
+        if (!table) return;
 
-            let appId = null;
-            if (row.hasAttribute('data-appid')) {
-                appId = row.getAttribute('data-appid');
-            } else {
+        const theadRow = table.querySelector('thead tr');
+        if (theadRow && !theadRow.querySelector('.copy-header-cell')) {
+            const th = document.createElement('th');
+            th.className = 'copy-header-cell';
+            th.setAttribute('aria-hidden', 'true');
+            th.setAttribute('tabindex', '-1');
+            th.style.width = '78px';
+            th.style.textAlign = 'center';
+            th.textContent = '';
+            theadRow.appendChild(th);
+        }
+
+        const gameRows = table.querySelectorAll('tbody tr[data-appid], tbody tr:has(a[href*="/app/"])');
+        gameRows.forEach(row => {
+            if (row.querySelector('.copy-cell')) return;
+
+            let appId = row.getAttribute('data-appid');
+            if (!appId) {
                 const appLink = row.querySelector('a[href*="/app/"]');
                 if (appLink) {
                     const match = appLink.href.match(/\/app\/(\d+)/);
                     if (match) appId = match[1];
                 }
             }
+            
             if (appId) {
-                const gameNameCell = row.querySelector('td:nth-child(3)');
-                if (gameNameCell) {
-                    const copyBtn = createCopyButton(appId);
-                    copyBtn.classList.add('charts-page-btn');
-                    const buttonContainer = document.createElement('div');
-                    buttonContainer.className = 'copy-btn-container';
-                    buttonContainer.appendChild(copyBtn);
-                    gameNameCell.style.position = 'relative';
-                    gameNameCell.appendChild(buttonContainer);
-                }
+                const td = document.createElement('td');
+                td.className = 'copy-cell';
+                td.setAttribute('aria-hidden', 'true');
+                td.setAttribute('tabindex', '-1');
+                td.style.textAlign = 'center';
+                td.style.verticalAlign = 'middle';
+                td.style.width = '78px';
+                
+                const copyBtn = createCopyButton(appId);
+                copyBtn.classList.add('charts-page-btn');
+                td.appendChild(copyBtn);
+                row.appendChild(td);
             }
         });
     }
@@ -191,6 +295,9 @@
 
     function init() {
         const url = window.location.href;
+        
+        // Remove existing copy buttons before re-init
+        document.querySelectorAll('.copy-cell').forEach(el => el.remove());
 
         if (url.includes('/app/')) {
             handleAppPage();
@@ -201,13 +308,13 @@
         }
     }
 
+    // Initial run
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
 
-    // Re-run for AJAX navigation
     const observer = new MutationObserver((mutations) => {
         let shouldReinit = false;
         mutations.forEach((mutation) => {
